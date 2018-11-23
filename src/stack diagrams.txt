@@ -1,0 +1,11 @@
+main menu of Home:
+
+main()
+mctrl.go()
+maingamemenu.go()
+gameCtrl.go()
+buildingController.go()
+home.go()
+mainMenu.go()
+
+

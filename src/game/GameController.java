@@ -115,14 +115,14 @@ public class GameController {
             isGameOver = true;
 
         if (player.didNotEatThisWeek())
-            GameWorld.showPrompt(Messaging.DID_NOT_EAT_MESSAGE);
+            GameWorld.showPrompt(Messaging.wDidNotEat());
 
         player.onWeekChange();
 
         //4 weeks have passed, rent is due
         if (gameWorld.getWeeks() % 4 == 0) {
             RentOffice.rentIsDue();
-            GameWorld.showPrompt(Messaging.RENT_IS_DUE);
+            GameWorld.showPrompt(Messaging.wRentIsDue());
         }
 
 

@@ -11,11 +11,17 @@ public class Messaging {
     private static final String RENT_IS_DUE_STRING =
             "Your rent is due;\n if you do not pay it this week, starting from " +
                     "the next week your landlord will take half your earnings until you pay it.";
-    public static final Window RENT_IS_DUE = MessageBox(RENT_IS_DUE_STRING, Menu.MIN_WIDTH);
+
+    public static Window wRentIsDue() {
+        return MessageBox(RENT_IS_DUE_STRING, Menu.MIN_WIDTH);
+    }
 
     private static final String DID_NOT_EAT_STRING =
             "You didn't eat last week;\n your steps have been reduced by a quarter for this week";
-    public static final Window DID_NOT_EAT_MESSAGE = MessageBox(DID_NOT_EAT_STRING, Menu.MIN_WIDTH);
+
+    public static Window wDidNotEat() {
+        return MessageBox(DID_NOT_EAT_STRING, Menu.MIN_WIDTH);
+    }
 
     private static final String EXIT_CONFIRMATION_STRING = "Are you sure you want to abort the current game?";
     public static final Window EXIT_CONFIRMATION = MenuBox(Menu.MIN_WIDTH, false, true,

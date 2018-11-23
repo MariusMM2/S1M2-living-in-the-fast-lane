@@ -1,4 +1,4 @@
-package game;
+package game.entities;
 
 public class Food extends Item {
     private int happiness;
@@ -12,7 +12,7 @@ public class Food extends Item {
         super(that);
     }
 
-    int getHappiness() {
+    public int getHappiness() {
         return happiness;
     }
 }

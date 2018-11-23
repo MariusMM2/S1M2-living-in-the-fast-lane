@@ -1,9 +1,9 @@
 package game.buildings.university;
 
-import game.Course;
-import game.CourseCollection;
 import game.buildings.Building;
 import game.buildings.BuildingMenu;
+import game.entities.Course;
+import game.entities.CourseCollection;
 
 import java.util.ArrayList;
 

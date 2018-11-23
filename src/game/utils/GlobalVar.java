@@ -1,4 +1,6 @@
-package game;
+package game.utils;
+
+import game.ui.Graphics;
 
 //java sucks balls and doesn't feature primitive references (1 long array hack doesn't count)
 public class GlobalVar {

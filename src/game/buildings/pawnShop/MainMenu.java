@@ -1,10 +1,9 @@
 package game.buildings.pawnShop;
 
 import game.GameController;
-import game.GameWorld;
-import game.UserInterface;
 import game.buildings.Building;
 import game.buildings.BuildingMenu;
+import game.ui.UserInterface;
 
 import static game.GameWorld.player;
 

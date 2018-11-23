@@ -3,8 +3,11 @@ package game;
 import game.buildings.BuildingController;
 import game.buildings.factory.Factory;
 import game.buildings.rentOffice.RentOffice;
+import game.entities.Player;
 import game.requests.QuitGameRequest;
 import game.requests.ShowStatisticsRequest;
+import game.ui.Messaging;
+import game.utils.GlobalVar;
 
 /*
 The main game controller
@@ -20,10 +23,10 @@ public class GameController {
     }
 
     //amount of game tick available per day
-    static final int TICKS_PER_DAY_MODIFIER = 4;
+    public static final int TICKS_PER_DAY_MODIFIER = 4;
     private static final int DAYS_PER_WEEK = 7;
     public static int ticksPerDay;
-    static int ticksPerWeek;
+    public static int ticksPerWeek;
 
 
     private static boolean isGameOver;

@@ -1,4 +1,4 @@
-package game;
+package game.entities;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -26,19 +26,19 @@ public class Possession extends Item {
     //random number from 0 to a tenth of its initial value
     //until it reaches a quarter of the initial value
     public void fadeValue() {
-        if (value > INITIAL_VALUE / 4.0)
-            value -= rand.nextDouble() * INITIAL_VALUE / 10.0;
+        if (value > initialValue / 4.0)
+            value -= rand.nextDouble() * initialValue / 10.0;
     }
 
 
     //increase the value an item when sold to the pawn shop
     public void inflateValue() {
-        value += INITIAL_VALUE / 20.0;
+        value += initialValue / 20.0;
     }
 
     //decrease the value of an item when bought from the pawn shop
     public void deflateValue() {
-        value -= INITIAL_VALUE / 20.0;
+        value -= initialValue / 20.0;
     }
 
     private static class PossessionGenerator {

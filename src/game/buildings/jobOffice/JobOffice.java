@@ -1,14 +1,9 @@
 package game.buildings.jobOffice;
 
-import game.GameController;
-import game.Job;
 import game.buildings.Building;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-
-import static game.buildings.university.University.*;
 
 /*
 This is the Job Office building, here you can apply for a job, if you meet the requirements

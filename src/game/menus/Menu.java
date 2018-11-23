@@ -1,8 +1,11 @@
 package game.menus;
 
-import game.*;
 import game.requests.QuitGameRequest;
 import game.requests.ShowStatisticsRequest;
+import game.ui.Graphics;
+import game.ui.Messaging;
+import game.ui.Surface;
+import game.ui.UserInterface;
 
 import java.util.ArrayList;
 import java.util.Arrays;

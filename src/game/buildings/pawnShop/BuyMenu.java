@@ -1,8 +1,8 @@
 package game.buildings.pawnShop;
 
-import game.Possession;
 import game.buildings.Building;
 import game.buildings.BuildingMenu;
+import game.entities.Possession;
 
 import java.util.ArrayList;
 
@@ -17,11 +17,11 @@ public class BuyMenu extends BuildingMenu {
     private static final String BUY_MESSAGE = "Choose item to buy:";
 
     private static String getNotBoughtMessage(Possession itemNotBought) {
-        return String.format("Not enough money for %s, you need %.2f$.", itemNotBought.getName(), itemNotBought.getValue());
+        return String.format("Not enough money for %s, you need %.2f$.", itemNotBought.name, itemNotBought.getValue());
     }
 
     private static String getBoughtMessage(Possession itemBought) {
-        return String.format("You have bought %s for %.2f$.", itemBought.getName(), itemBought.getValue());
+        return String.format("You have bought %s for %.2f$.", itemBought.name, itemBought.getValue());
     }
 
     BuyMenu(Building bld) {

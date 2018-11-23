@@ -1,10 +1,10 @@
 package game.buildings.pawnShop;
 
-import java.util.ArrayList;
-
-import game.Possession;
 import game.buildings.Building;
 import game.buildings.BuildingMenu;
+import game.entities.Possession;
+
+import java.util.ArrayList;
 
 import static game.GameWorld.player;
 import static game.buildings.pawnShop.MainMenu.ITEMS_PER_PAGE;
@@ -17,7 +17,7 @@ public class SellMenu extends BuildingMenu {
     private static final String SELL_MESSAGE = "Choose item to sell:";
 
     private static String getSoldMessage(Possession itemSold) {
-        return String.format("You have sold your %s for %.2f$.", itemSold.getName(), itemSold.getValue());
+        return String.format("You have sold your %s for %.2f$.", itemSold.name, itemSold.getValue());
     }
 
     SellMenu(Building bld, String... menuItems) {

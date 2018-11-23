@@ -1,8 +1,8 @@
 package game.buildings.burger;
 
-import game.Food;
 import game.buildings.Building;
 import game.buildings.BuildingMenu;
+import game.entities.Food;
 
 import java.util.ArrayList;
 
@@ -43,8 +43,8 @@ public class FoodMenu extends BuildingMenu {
         Food item = getFoodItems()[foodNumber];
 
         message = Burger.giveFood(foodNumber) ?
-                String.format("You bought %s for %.2f$", item.getName(), item.getValue()) :
-                String.format("Not enough money for %s, you need %.2f$", item.getName(), item.getValue());
+                String.format("You bought %s for %.2f$", item.name, item.getValue()) :
+                String.format("Not enough money for %s, you need %.2f$", item.name, item.getValue());
     }
 
     @Override
@@ -52,7 +52,7 @@ public class FoodMenu extends BuildingMenu {
         //refresh the menu items, after price fluctuation
         ArrayList<String> menuItems = new ArrayList<>();
         for (Food food : getFoodItems())
-            menuItems.add(String.format("%.2f$: %s", food.getValue(), food.getName()));
+            menuItems.add(String.format("%.2f$: %s", food.getValue(), food.name));
         menuItems.add(BACK);
         setMenuItems(menuItems);
     }

@@ -1,9 +1,9 @@
 package game.buildings.pawnShop;
 
 import game.GameController;
-import game.Item;
-import game.Possession;
 import game.buildings.Building;
+import game.entities.Item;
+import game.entities.Possession;
 
 import java.util.ArrayList;
 

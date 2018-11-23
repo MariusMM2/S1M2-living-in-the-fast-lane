@@ -1,9 +1,10 @@
 package game.buildings.bank;
 
-import game.Job;
 import game.buildings.Building;
+import game.entities.Job;
 
-import static game.CourseCollection.*;
+import static game.entities.CourseCollection.businessAdmin;
+import static game.entities.CourseCollection.research;
 
 /*
 This is the Bank building, here you can work, deposit or withdraw cash

@@ -1,5 +1,6 @@
-package game;
+package game.ui;
 
+import game.entities.Course;
 import game.menus.Menu;
 
 /*

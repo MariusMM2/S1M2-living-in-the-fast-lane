@@ -1,10 +1,7 @@
 package game.buildings;
 
 import game.GameController;
-import game.UserInterface;
 import game.menus.Menu;
-import game.requests.QuitGameRequest;
-import game.requests.ShowStatisticsRequest;
 
 import static game.GameWorld.player;
 

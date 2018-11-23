@@ -1,4 +1,4 @@
-package game;
+package game.entities;
 
 /*
 Class representing the university courses

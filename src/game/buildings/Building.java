@@ -1,11 +1,12 @@
 package game.buildings;
 
-import game.*;
-import game.Graphics;
-import game.Window;
-import game.buildings.factory.Factory;
+import game.GameController;
+import game.entities.Job;
 import game.requests.QuitGameRequest;
 import game.requests.ShowStatisticsRequest;
+import game.ui.Graphics;
+import game.ui.Messaging;
+import game.ui.Window;
 
 import java.awt.*;
 import java.util.ArrayList;

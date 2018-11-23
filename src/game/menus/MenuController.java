@@ -1,6 +1,5 @@
 package game.menus;
 
-import game.Graphics;
 import game.requests.QuitGameRequest;
 import game.requests.ShowStatisticsRequest;
 

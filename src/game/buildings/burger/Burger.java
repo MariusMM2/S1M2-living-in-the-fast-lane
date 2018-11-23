@@ -1,15 +1,17 @@
 package game.buildings.burger;
 
-import game.*;
 import game.buildings.Building;
 import game.buildings.BuildingMenu;
+import game.entities.Food;
+import game.entities.Item;
+import game.entities.Job;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import static game.CourseCollection.*;
 import static game.GameWorld.player;
+import static game.entities.CourseCollection.businessAdmin;
 
 /*
 This is the factory building, here you can work, if you have one of the jobs mentioned below

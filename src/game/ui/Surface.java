@@ -1,6 +1,6 @@
-package game;
+package game.ui;
 
-import java.awt.Rectangle;
+import java.awt.*;
 
 /*
 Class used for representing and operating 2d arrays of chars
@@ -69,7 +69,7 @@ public class Surface {
     }
 
     //reset the surface
-    void reset() {
+    public void reset() {
         surface = new StringBuilder();
     }
 
@@ -105,7 +105,7 @@ public class Surface {
         return rect.height / 2;
     }
 
-    protected char getChar(int x, int y) {
+    public char getChar(int x, int y) {
         try {
             return this.surface.charAt(y * this.rect.width + x);
         } catch (StringIndexOutOfBoundsException e) {

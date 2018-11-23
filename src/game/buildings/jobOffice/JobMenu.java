@@ -1,8 +1,8 @@
 package game.buildings.jobOffice;
 
-import game.Job;
 import game.buildings.Building;
 import game.buildings.BuildingMenu;
+import game.entities.Job;
 
 import java.util.ArrayList;
 

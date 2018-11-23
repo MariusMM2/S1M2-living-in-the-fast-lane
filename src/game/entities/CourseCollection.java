@@ -1,8 +1,4 @@
-package game;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package game.entities;
 
 public final class CourseCollection {
     private CourseCollection() {

@@ -1,4 +1,4 @@
-package game;
+package game.ui;
 
 import game.requests.QuitGameRequest;
 import game.requests.ShowStatisticsRequest;
@@ -87,7 +87,7 @@ public class UserInterface {
     //Get String input from user
     //prompt is used to let the user know what to input (just the text, no colons or leading white space)
     //minLen is the minimum length of the input, while maxLen is the maximum
-    static String stringInput(String prompt, int minLen, int maxLen, String type) {
+    public static String stringInput(String prompt, int minLen, int maxLen, String type) {
         if (minLen < 0)
             throw new ArithmeticException(String.format("minLen(%d) < 0", minLen));
         if (minLen > maxLen)
@@ -135,7 +135,7 @@ public class UserInterface {
 
     //prompts the user to input something until it matches an item
     //in the KEY_WORDS array
-    static String keyInput() {
+    public static String keyInput() {
         String message = null;
         while (true) {
             String choice = stringInput("WASD to move", 0, 255, "key");
@@ -215,7 +215,7 @@ public class UserInterface {
     //half broken, because if the player presses enter
     //before the wait time has passed, the scanner will automatically
     //get the nextLine char possibly before the player has finished reading the message
-    static void advance() {
+    public static void advance() {
         wait(4000);
         print("Press Enter to continue...");
         input.nextLine();

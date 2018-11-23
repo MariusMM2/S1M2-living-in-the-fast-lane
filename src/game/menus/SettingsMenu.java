@@ -1,8 +1,8 @@
 package game.menus;
 
 import game.GameController;
-import game.GlobalVar;
-import game.Graphics;
+import game.ui.Graphics;
+import game.utils.GlobalVar;
 
 import java.util.ArrayList;
 

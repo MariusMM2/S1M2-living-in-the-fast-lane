@@ -1,8 +1,8 @@
 package game.buildings.burger;
 
-import game.Food;
 import game.buildings.Building;
 import game.buildings.BuildingMenu;
+import game.entities.Food;
 
 /*
 Main menu for the Burger House, where you can enter the food menu, order a random food item,
@@ -14,7 +14,7 @@ public class MainMenu extends BuildingMenu {
     private static final String NO_MONEY_MSG = "You can't afford anything, get some cash first.";
 
     private static String getBoughtMessage(Food foodBought) {
-        return String.format("You bought %s for %.2f$", foodBought.getName(), foodBought.getValue());
+        return String.format("You bought %s for %.2f$", foodBought.name, foodBought.getValue());
     }
 
     //Singleton

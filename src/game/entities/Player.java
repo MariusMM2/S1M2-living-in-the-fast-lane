@@ -1,8 +1,14 @@
-package game;
+package game.entities;
 
+import game.GameController;
+import game.GameWorld;
 import game.buildings.Building;
 import game.buildings.bank.Bank;
 import game.buildings.rentOffice.RentOffice;
+import game.ui.Graphics;
+import game.ui.Messaging;
+import game.ui.Surface;
+import game.ui.UserInterface;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -14,8 +20,8 @@ Player class
  */
 public class Player {
     //Goal Boundaries
-    static final int MIN_GOAL = 50;
-    static final int MAX_GOAL = 400;
+    public static final int MIN_GOAL = 50;
+    public static final int MAX_GOAL = 400;
 
     //initial constant values
     private static final double INITIAL_MONEY = 300.0;
@@ -70,7 +76,7 @@ public class Player {
     private Point pos;
     private GameWorld gameWorld;
 
-    Player(GameWorld gameWorld, String name, int w, int h, int e, int c) {
+    public Player(GameWorld gameWorld, String name, int w, int h, int e, int c) {
         INITIAL_STEPS = GameController.ticksPerWeek;
 
         TARGET_WEALTH = w;
@@ -133,7 +139,7 @@ public class Player {
     }
 
     //check if player reached their goals
-    boolean hasAchievedGoals() {
+    public boolean hasAchievedGoals() {
         return wealth >= TARGET_WEALTH &&
                 happiness >= TARGET_HAPPINESS &&
                 education >= TARGET_EDUCATION &&
@@ -156,7 +162,7 @@ public class Player {
     }
 
     //one step
-    void step() {
+    public void step() {
         step(1);
     }
 
@@ -168,12 +174,12 @@ public class Player {
     }
 
     //check if player ran out of steps
-    boolean isOutOfSteps() {
+    public boolean isOutOfSteps() {
         return stepsLeft == 0;
     }
 
     //get remaining steps
-    int getStepsLeft() {
+    public int getStepsLeft() {
         return stepsLeft;
     }
 
@@ -182,19 +188,19 @@ public class Player {
         stepsLeft = (int) (INITIAL_STEPS * stepsModifier);
     }
 
-    double getWealthPercentage() {
+    public double getWealthPercentage() {
         return (wealth / TARGET_WEALTH * 100.0);
     }
 
-    double getHappinessPercentage() {
+    public double getHappinessPercentage() {
         return (happiness / TARGET_HAPPINESS * 100.0);
     }
 
-    double getEducationPercentage() {
+    public double getEducationPercentage() {
         return (education / TARGET_EDUCATION * 100.0);
     }
 
-    double getCareerPercentage() {
+    public double getCareerPercentage() {
         return (career / TARGET_CAREER * 100.0);
     }
 
@@ -245,11 +251,11 @@ public class Player {
             happiness = 0;
     }
 
-    double getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    double getSalary() {
+    public double getSalary() {
         return job.getWage() * wageModifier;
     }
 
@@ -264,7 +270,7 @@ public class Player {
         money += value;
     }
 
-    void addSalary(double value) {
+    public void addSalary(double value) {
         addMoney(value * wageModifier);
     }
 
@@ -322,13 +328,13 @@ public class Player {
         return (int) workExperience;
     }
 
-    void onTick() {
+    public void onTick() {
         updateWealth();
         if (GameController.DEBUG.getBooleanValue())
             printDebug();
     }
 
-    void onWeekChange() {
+    public void onWeekChange() {
         checkIfAte();
         checkRent();
         resetSteps();
@@ -368,7 +374,7 @@ public class Player {
         }
     }
 
-    void move(String direction) {
+    public void move(String direction) {
         switch (direction) {
             case "left":
                 moveLeft();
@@ -418,16 +424,16 @@ public class Player {
         return rect.contains(x, y);
     }
 
-    Point getPos() {
+    public Point getPos() {
         return pos;
     }
 
-    void setPos(Point newPos) {
+    public void setPos(Point newPos) {
         pos.x = newPos.x;
         pos.y = newPos.y;
     }
 
-    boolean didNotEatThisWeek() {
+    public boolean didNotEatThisWeek() {
         return !ateThisWeek;
     }
 
@@ -458,7 +464,7 @@ public class Player {
         return item;
     }
 
-    Surface getStatistics() {
+    public Surface getStatistics() {
         int winWidth = Surface.displayWidth / 2;
 
         String goalsText1 = String.format("Wealth: %d, Happiness: %d",

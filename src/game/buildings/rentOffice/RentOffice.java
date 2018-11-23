@@ -1,13 +1,10 @@
 package game.buildings.rentOffice;
 
-import game.GameController;
-import game.Item;
-import game.Job;
 import game.buildings.Building;
+import game.entities.Item;
+import game.entities.Job;
 
-import java.util.Random;
-
-import static game.CourseCollection.*;
+import static game.entities.CourseCollection.businessAdmin;
 
 /*
 This is the Rent Office building, here you can work or pay your rent when time comes

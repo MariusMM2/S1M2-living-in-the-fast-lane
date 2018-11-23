@@ -1,4 +1,6 @@
-package game;
+package game.ui;
+
+import game.utils.GlobalVar;
 
 @SuppressWarnings("ConstantConditions")
 public class Graphics {

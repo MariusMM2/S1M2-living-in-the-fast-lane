@@ -2,37 +2,41 @@ package game;
 
 import game.buildings.Building;
 import game.buildings.BuildingController;
-import game.menus.Menu;
+import game.entities.Player;
 import game.requests.QuitGameRequest;
 import game.requests.ShowStatisticsRequest;
+import game.ui.Messaging;
+import game.ui.Surface;
+import game.ui.UserInterface;
+import game.ui.Window;
 
 import java.awt.*;
 import java.util.Arrays;
 
 import static game.GameController.DEBUG;
 import static game.GameController.FREEROAM;
-import static game.Player.MIN_GOAL;
-import static game.Player.MAX_GOAL;
+import static game.entities.Player.MAX_GOAL;
+import static game.entities.Player.MIN_GOAL;
 
 /*
 Class holding the main game world behaviour
  */
 public class GameWorld {
-    private static Window gameMap; // 2D representation of the world
+    private static game.ui.Window gameMap; // 2D representation of the world
     public static Player player;//player reference
     private static int days;//days passed
     private static int weeks;//weeks passed
-    final Rectangle rect;
     private boolean playerEnteredABuilding;
+    public final Rectangle rect;
 
     public GameWorld() {
         rect = new Rectangle(Surface.displayWidth - 2, Surface.displayHeight - 2);
         //-2 for each dimension to accommodate adding a frame before drawing
-        gameMap = new Window(rect.width, rect.height);
+        gameMap = new game.ui.Window(rect.width, rect.height);
         //reset();
     }
 
-    public void reset() {
+    void reset() {
         days = 0;
         weeks = 1;
         playerEnteredABuilding = false;
@@ -40,7 +44,7 @@ public class GameWorld {
     }
 
     //getter for the gameMap
-    public Window getMap() {
+    public game.ui.Window getMap() {
         return gameMap;
     }
 
@@ -50,8 +54,8 @@ public class GameWorld {
         Arrays.stream(BuildingController.getBuildings()).forEach(building -> building.addToWindow(gameMap));
 
         if (FREEROAM.getBooleanValue()) {
-            gameMap.replaceAll(Graphics.ENTITY_WALL, Graphics.getFrameList());
-            gameMap.addSingle(player.getPos().x, player.getPos().y, Graphics.PLAYER_CHAR);
+            gameMap.replaceAll(game.ui.Graphics.ENTITY_WALL, game.ui.Graphics.getFrameList());
+            gameMap.addSingle(player.getPos().x, player.getPos().y, game.ui.Graphics.PLAYER_CHAR);
         }
 
         if (currentBuildingMenu != null) {
@@ -67,16 +71,16 @@ public class GameWorld {
         //text representing the number of steps left for the week
         String stepsText = String.format("Steps left:%d", player.getStepsLeft());
         //join the two texts together
-        StringBuilder weeksAndStepsText = new StringBuilder(weekText).append(Graphics.FRAME_BOT).append(stepsText);
+        StringBuilder weeksAndStepsText = new StringBuilder(weekText).append(game.ui.Graphics.FRAME_BOT).append(stepsText);
 
         //text representing the total amount of money the player has
         String moneyText = String.format("Money:%.2f$", player.getMoney());
 
         //text representing the current game progress
         String goalsText = String.format(
-                "Wealth:%.0f%%" + Graphics.FRAME_TOP +
-                        "Happiness:%.0f%%" + Graphics.FRAME_TOP +
-                        "Education:%.0f%%" + Graphics.FRAME_TOP +
+                "Wealth:%.0f%%" + game.ui.Graphics.FRAME_TOP +
+                        "Happiness:%.0f%%" + game.ui.Graphics.FRAME_TOP +
+                        "Education:%.0f%%" + game.ui.Graphics.FRAME_TOP +
                         "Career:%.0f%%",
                 player.getWealthPercentage(), player.getHappinessPercentage(), player.getEducationPercentage(), player.getCareerPercentage());
 
@@ -160,11 +164,11 @@ public class GameWorld {
         return null;
     }
 
-    boolean canWalkAt(int x, int y) {
+    public boolean canWalkAt(int x, int y) {
         char aChar = gameMap.getChar(x, y);
-        if (aChar != Graphics.BLANK_CHAR && aChar != Graphics.ENTITY_FLOOR)
+        if (aChar != game.ui.Graphics.BLANK_CHAR && aChar != game.ui.Graphics.ENTITY_FLOOR)
             return false;
-        if (aChar == Graphics.ENTITY_FLOOR)
+        if (aChar == game.ui.Graphics.ENTITY_FLOOR)
             playerEnteredABuilding = true;
 
         return true;

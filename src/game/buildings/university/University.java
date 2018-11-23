@@ -1,12 +1,18 @@
 package game.buildings.university;
 
-import game.*;
+import game.GameController;
+import game.GameWorld;
 import game.buildings.Building;
-import game.buildings.BuildingController;
 import game.buildings.BuildingMenu;
+import game.entities.Course;
+import game.entities.CourseCollection;
+import game.entities.Item;
+import game.entities.Job;
+import game.ui.Messaging;
 
-import static game.CourseCollection.*;
 import static game.GameWorld.player;
+import static game.entities.CourseCollection.academic;
+import static game.entities.CourseCollection.postDoctoral;
 
 /*
 Here you can enroll in courses, so you can increase your Education

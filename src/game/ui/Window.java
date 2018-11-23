@@ -1,4 +1,4 @@
-package game;
+package game.ui;
 
 import java.awt.*;
 
@@ -35,7 +35,7 @@ public class Window extends Surface {
 
     //replace all the surface elements with a predefined element
     @Override
-    void reset() {
+    public void reset() {
         reset(' ');
     }
 
@@ -46,7 +46,7 @@ public class Window extends Surface {
     }
 
     //add enclosing frames to the window
-    Window addFrame() {
+    public Window addFrame() {
         //create a bigger copy of this window object
         Window framedWindow = new Window(this.rect.width + 2, this.rect.height + 2);
 

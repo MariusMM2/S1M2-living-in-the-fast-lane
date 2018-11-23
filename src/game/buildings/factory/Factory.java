@@ -1,9 +1,9 @@
 package game.buildings.factory;
 
-import game.Job;
 import game.buildings.Building;
+import game.entities.Job;
 
-import static game.CourseCollection.*;
+import static game.entities.CourseCollection.*;
 
 /*
 This is the factory building, here you can work, if you have one of the jobs mentioned below

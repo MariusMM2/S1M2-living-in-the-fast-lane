@@ -1,5 +1,5 @@
-import game.Surface;
 import game.menus.MenuController;
+import game.ui.Surface;
 
 public class Main {
     private static final byte CONSOLE_WIDTH = 80;

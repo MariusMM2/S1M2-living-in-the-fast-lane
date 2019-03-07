@@ -1,4 +1,0 @@
-input is to be handled ONLY by game controller
-game controller passes the input forward to the buildings
-building forwards input to the active menu within that building
-menu operates on the input
